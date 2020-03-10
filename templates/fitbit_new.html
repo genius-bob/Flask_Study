@@ -2,12 +2,11 @@
 
 {% block fitbit %}
     <ul>
-
-    {% for user in  trans %}
+    {% for user in trans %}
     <li>
-        Trans_ID:{{ user[tran_id] }}
-        Price:{{ user[price] }}
-        Amount:{{ user[amount] }}
+        Trans_ID:{{ user['tran_id'] }}
+        Price:{{ user['price'] }}
+        Amount:{{ user['amount'] }}
     </li>
     {% endfor %}
     </ul>

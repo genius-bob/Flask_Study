@@ -1,0 +1,14 @@
+{% extends 'layout01.html' %}
+
+{% block posts %}
+    <h1>Posts:</h1>
+    <ul>
+    {% for post in posts %}
+        <li>
+        <strong>Author:</strong>{{ post.author.name }}<br>
+        <strong>Titles:</strong>{{ post.title }}<br>
+        <strong>Description:</strong>{{ post.description }}<br>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
