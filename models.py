@@ -1,6 +1,6 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
-from config import db
+from config import db,bcrypt
 
 class BlogPost(db.Model):
     __tablename__="posts"
@@ -11,6 +11,9 @@ class BlogPost(db.Model):
     def __init__(self,title,description):
         self.title = title
         self.description = description
+
+    def __repr__(self):
+        return '<title {}>'.format(self.title)
 
 class User(db.Model):
     __tablename__= "users"
@@ -23,4 +26,16 @@ class User(db.Model):
     def __init__(self,name,email,password):
         self.name = name
         self.email = email
-        self.password = password
+        self.password = bcrypt.generate_password_hash(password)
+
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return self.id
