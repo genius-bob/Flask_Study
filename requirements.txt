@@ -19,7 +19,7 @@ idna==2.6
 itsdangerous==0.24	
 pip==19.0.3	
 pycparser==2.18	
-requests==2.18.4	
+requests==2.20.0	
 setuptools==40.8.0	
 six==1.11.0	
 urllib3==1.22	
