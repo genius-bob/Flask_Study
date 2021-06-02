@@ -22,4 +22,4 @@ pycparser==2.18
 requests==2.18.4	
 setuptools==40.8.0	
 six==1.11.0	
-urllib3==1.22	
+urllib3==1.26.5	
